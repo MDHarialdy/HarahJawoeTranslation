@@ -17,6 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/iv_photo_history"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
@@ -29,6 +30,19 @@
             android:scaleType="centerCrop"
             android:src="@drawable/gradient_green_white_top"
             android:importantForAccessibility="no" />
+
+        <TextView
+            android:id="@+id/tv_profile_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Result Here"
+            android:textSize="20sp"
+            android:maxLines="2"
+            android:fontFamily="@font/alata"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:layout_gravity="bottom"/>
 
     </androidx.cardview.widget.CardView>
 

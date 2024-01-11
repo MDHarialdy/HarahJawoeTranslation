@@ -14,7 +14,7 @@
             android:id="@+id/cv_statistik"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:backgroundTint="@color/yellow"
+            android:backgroundTint="@color/grey"
             style="@style/MyCardView"
             app:layout_constraintTop_toTopOf="parent" >
 
@@ -25,23 +25,42 @@
 
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="152dp"
-                    android:layout_height="144dp"
+                    android:id="@+id/circleImageView"
+                    android:layout_width="88dp"
+                    android:layout_height="113dp"
                     android:importantForAccessibility="no"
                     android:scaleType="centerCrop"
                     android:src="@drawable/james_person"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/cardView"
-                    app:layout_constraintHorizontal_bias="0.359"
+                    app:layout_constraintHorizontal_bias="0.313"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.484" />
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginEnd="5dp"
+                    android:fontFamily="@font/alata"
+                    android:text="Lorem Ipsum"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/cardView"
+                    app:layout_constraintHorizontal_bias="0.34"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/circleImageView"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="250dp"
                     android:layout_height="match_parent"
-                    app:cardCornerRadius="20dp"
+                    android:backgroundTint="@color/yellow"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    app:cardCornerRadius="50dp"
                     app:cardElevation="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -50,13 +69,12 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
+                        android:layout_gravity="bottom|center"
                         android:layout_marginStart="7dp"
                         android:layout_marginEnd="7dp"
                         android:layout_marginBottom="10dp"
                         android:fontFamily="@font/alata"
                         android:text="TRANSLATED"
-                        android:textColor="@color/black"
                         android:textSize="23sp"
                         android:textStyle="bold" />
 
@@ -67,7 +85,6 @@
                         android:layout_marginBottom="8dp"
                         android:fontFamily="@font/alata"
                         android:text="0"
-                        android:textColor="@color/black"
                         android:textSize="80sp" />
 
                 </androidx.cardview.widget.CardView>
@@ -82,7 +99,6 @@
             android:layout_gravity="bottom"
             android:fontFamily="@font/alata"
             android:text="Latest Translated"
-            android:textColor="@color/black"
             android:textSize="23sp"
             android:textStyle="bold"
             android:layout_marginStart="12dp"

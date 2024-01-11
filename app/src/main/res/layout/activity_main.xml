@@ -11,10 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/shape_round"
-        app:itemBackground="@color/grey"
         app:itemIconTint="@color/black"
         app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
-        app:itemTextColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,16 +23,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
-        android:backgroundTint="@color/yellow"
-        android:contentDescription="TODO"
+        android:backgroundTint="@color/white"
         android:src="@drawable/baseline_photo_camera_24"
         app:layout_constraintBottom_toBottomOf="@+id/bottom_nav_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:maxImageSize="40dp"
-        app:tint="@color/white" />
+        app:tint="@color/black"
+        android:contentDescription="Scan Harah Jawoe" />
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment_activity_home"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
