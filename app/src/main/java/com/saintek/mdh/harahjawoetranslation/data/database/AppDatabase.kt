@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 @Database(
-    entities = [HistoryEntity::class, UserEntity::class],
+    entities = [HistoryEntity::class],
     version = 1,
     exportSchema = false
 )

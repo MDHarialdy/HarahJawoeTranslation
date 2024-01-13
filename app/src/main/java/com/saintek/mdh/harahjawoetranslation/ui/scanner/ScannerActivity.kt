@@ -18,6 +18,8 @@ import androidx.camera.core.ImageCaptureException
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.saintek.mdh.harahjawoetranslation.R
 import com.saintek.mdh.harahjawoetranslation.databinding.ActivityScannerBinding
 import com.saintek.mdh.harahjawoetranslation.ui.util.createCustomTempFile
@@ -26,16 +28,18 @@ import com.saintek.mdh.harahjawoetranslation.ui.util.showToast
 class ScannerActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityScannerBinding
-    private var currentImageURI: Uri? = null
     private var imageCapture: ImageCapture? = null
     private var cameraSelector: CameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
+
+    private var _currentImageURI = MutableLiveData<Uri>()
+    private var currentImageURI: LiveData<Uri> = _currentImageURI
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityScannerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.btnGallery.setOnClickListener { startGallery() }
-        binding.captureImage.setOnClickListener { takePhoto() }
+        binding.cameraButton.setOnClickListener { takePhoto() }
     }
 
     override fun onResume() {
@@ -118,10 +122,11 @@ class ScannerActivity : AppCompatActivity() {
             ContextCompat.getMainExecutor(this),
             object :ImageCapture.OnImageSavedCallback {
                 override fun onImageSaved(outputFileResults: ImageCapture.OutputFileResults) {
-                    currentImageURI  = outputFileResults.savedUri
-                    if (currentImageURI != null){
+                    _currentImageURI.value  = outputFileResults.savedUri
+                    if (_currentImageURI != null){
                         val intent = Intent(this@ScannerActivity, ScannerResultActivity::class.java)
                         intent.putExtra(EXTRA_CAMERA_IMAGE, currentImageURI.toString())
+                        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
                         startActivity(intent)
                     }
                 }
@@ -140,16 +145,18 @@ class ScannerActivity : AppCompatActivity() {
 
     private val launchGallery = registerForActivityResult(
         ActivityResultContracts.PickVisualMedia()
-    ){uri: Uri? ->
+    ){uri ->
         if (uri != null){
-            currentImageURI = uri
+            _currentImageURI.value = uri
             val intent = Intent(this@ScannerActivity, ScannerResultActivity::class.java)
             intent.putExtra(EXTRA_GALLERY_IMAGE, currentImageURI.toString())
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
             startActivity(intent)
         } else {
             Log.d(TAG, "Image Picker Null: $uri")
         }
     }
+
     companion object {
         const val TAG = "ScannerActivity"
         const val EXTRA_CAMERA_IMAGE = "CameraImage"

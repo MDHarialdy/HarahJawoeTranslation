@@ -8,4 +8,7 @@ import com.saintek.mdh.harahjawoetranslation.data.repository.AppRepository
 class HistoryViewModel(val appRepository: AppRepository): ViewModel() {
     fun getAllHistory(historyId: Int): LiveData<List<HistoryEntity>> = appRepository.getHistory(historyId)
 
+    fun getUser(id: Int){
+
+    }
 }

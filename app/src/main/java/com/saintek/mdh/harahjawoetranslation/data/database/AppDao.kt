@@ -13,7 +13,5 @@ interface AppDao {
     suspend fun insertHistory(result: HistoryEntity)
 
     @Query("SELECT * FROM historyentity where historyId = :historyId")
-   fun getHistory(historyId: Int): LiveData<List<HistoryEntity>>
-
-
+    fun getHistory(historyId: Int): LiveData<List<HistoryEntity>>
 }

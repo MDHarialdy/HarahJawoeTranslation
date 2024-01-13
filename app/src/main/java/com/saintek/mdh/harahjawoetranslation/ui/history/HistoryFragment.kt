@@ -37,6 +37,7 @@ class HistoryFragment : Fragment() {
 
         historyViewModel.getAllHistory(historyId).observe(viewLifecycleOwner) {
             setupListKamus(it)
+            binding.tvCount.text = it.size.toString()
         }
     }
 
@@ -47,4 +48,13 @@ class HistoryFragment : Fragment() {
         val adapter = HistoryAdapter(history)
         binding.rvHistory.adapter = adapter
     }
+
+//    private fun setupListKamus(history: List<HistoryEntity>) {
+//        val adapter = HistoryAdapter()
+//        binding.rvHistory.adapter = adapter
+//        val layoutManager =
+//            LinearLayoutManager(requireContext())
+//        binding.rvHistory.layoutManager = layoutManager
+//        adapter.submitList(history)
+//    }
 }

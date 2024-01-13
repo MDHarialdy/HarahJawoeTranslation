@@ -30,8 +30,8 @@ class ScannerResultActivity : AppCompatActivity() {
         val viewModelFactory = ViewModelFactory.getInstance(this)
         scannerViewModel = ViewModelProvider(this, viewModelFactory)[ScannerViewModel::class.java]
 
-        val imageUrlCamera = intent.getStringExtra(ScannerActivity.EXTRA_CAMERA_IMAGE)?.toUri()
-        val imageUrlGallery = intent.getStringExtra(ScannerActivity.EXTRA_GALLERY_IMAGE)?.toUri()
+        var imageUrlCamera = intent.getStringExtra(ScannerActivity.EXTRA_CAMERA_IMAGE)?.toUri()
+        var imageUrlGallery = intent.getStringExtra(ScannerActivity.EXTRA_GALLERY_IMAGE)?.toUri()
         val scanResult = intent.getStringExtra(ScannerActivity.EXTRA_RESULT_SCANNER) ?: "Apapun"
 
         if (imageUrlCamera != null) {
@@ -40,10 +40,12 @@ class ScannerResultActivity : AppCompatActivity() {
             binding.ivPhotoResultScan.setImageBitmap(rotatedBitmap)
             binding.ivPhotoResultScan.scaleType = ImageView.ScaleType.CENTER_CROP
             scannerViewModel.insertHistory(imageUrlCamera, scanResult, contentResolver)
+
         } else if (imageUrlGallery != null) {
             binding.ivPhotoResultScan.setImageURI(imageUrlGallery)
             binding.ivPhotoResultScan.scaleType = ImageView.ScaleType.CENTER_CROP
             scannerViewModel.insertHistory(imageUrlGallery, scanResult, contentResolver)
+
         } else {
             showToast(this, "Gambar Tidak Ada")
         }
@@ -51,6 +53,8 @@ class ScannerResultActivity : AppCompatActivity() {
         binding.btnDeteksiUlang.setOnClickListener {
             val intent = Intent(this, ScannerActivity::class.java)
             startActivity(intent)
+            _binding = null
+            finish()
         }
 
         if (scanResult != null) {
