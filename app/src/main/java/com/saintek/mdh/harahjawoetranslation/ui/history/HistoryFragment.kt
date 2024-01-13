@@ -1,6 +1,7 @@
 package com.saintek.mdh.harahjawoetranslation.ui.history
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -39,6 +40,12 @@ class HistoryFragment : Fragment() {
             setupListKamus(it)
             binding.tvCount.text = it.size.toString()
         }
+
+        historyViewModel.getUser(1)
+        historyViewModel.responseUser.observe(viewLifecycleOwner){
+            binding.tvUsername.text = it.name
+            Log.d(TAG,"User : $it")
+        }
     }
 
     private fun setupListKamus(history: List<HistoryEntity>) {
@@ -49,12 +56,7 @@ class HistoryFragment : Fragment() {
         binding.rvHistory.adapter = adapter
     }
 
-//    private fun setupListKamus(history: List<HistoryEntity>) {
-//        val adapter = HistoryAdapter()
-//        binding.rvHistory.adapter = adapter
-//        val layoutManager =
-//            LinearLayoutManager(requireContext())
-//        binding.rvHistory.layoutManager = layoutManager
-//        adapter.submitList(history)
-//    }
+    companion object {
+        val TAG = "History Fragment"
+    }
 }

@@ -15,6 +15,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.saintek.mdh.harahjawoetranslation.R
+import com.saintek.mdh.harahjawoetranslation.data.database.UserEntity
 import com.saintek.mdh.harahjawoetranslation.databinding.ActivityMainBinding
 import com.saintek.mdh.harahjawoetranslation.ui.scanner.ScannerActivity
 import com.saintek.mdh.harahjawoetranslation.ui.util.showToast
@@ -76,7 +77,8 @@ class MainActivity : AppCompatActivity() {
             } else {
                 binding.root.visibility = View.GONE
                 Log.d("MainActivity", "FistTime : $isFirstTime")
-                mainViewModel.setUserFirstTime()
+                val user = UserEntity(1, "MDH210705112", 1, "Banda Aceh")
+                mainViewModel.setUserFirstTime(user)
             }
         }
     }

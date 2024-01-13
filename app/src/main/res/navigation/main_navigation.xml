@@ -17,4 +17,10 @@
         android:name="com.saintek.mdh.harahjawoetranslation.ui.profile.ProfileFragment"
         tools:layout="@layout/fragment_profile"/>
 
+    <fragment
+        android:id="@+id/navigation_profile_edit"
+        android:label="Profile Edit"
+        android:name="com.saintek.mdh.harahjawoetranslation.ui.profile_edit.ProfileEditFragment"
+        tools:layout="@layout/fragment_profile_edit"/>
+
 </navigation>

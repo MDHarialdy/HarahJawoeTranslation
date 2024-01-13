@@ -14,22 +14,24 @@ class AppRepository private constructor(
 
     fun getHistory(imageId: Int) = appDao.getHistory(imageId)
 
-    suspend fun insertUserFirstime(){
-        appPref.setUserForTheFirstTime()
+    suspend fun insertUserFirstime(user: UserEntity){
+        appDao.insertInitUser(user)
     }
 
-    suspend fun updateUser(user: UserEntity){
-        appPref.saveUser(user)
+    suspend fun updateUser(name: String, age: Int, city: String, id: Int){
+        appDao.updateUser(name, age, city, id)
     }
+
+    suspend fun getUser(id: Int) =  appDao.getUser(id)
+
 
     suspend fun isFirstTime(): Boolean {
       return appPref.isFirstTimeLaunch()
     }
 
-    fun getUserComplete(){
-        appPref.getUserComplete()
+    suspend fun isFirstTimeFalse(){
+        return appPref.isFirstTimeFalse()
     }
-    fun getUserOnlyName() = appPref.getUserOnlyName()
 
     companion object {
         @Volatile

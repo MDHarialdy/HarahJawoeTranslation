@@ -1,5 +1,7 @@
 package com.saintek.mdh.harahjawoetranslation.ui.profile
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.saintek.mdh.harahjawoetranslation.data.database.UserEntity
@@ -8,13 +10,12 @@ import kotlinx.coroutines.launch
 
 class ProfileViewModel(private val appRepository: AppRepository): ViewModel() {
 
-    fun getUserComplete(){
-        return appRepository.getUserComplete()
-    }
-
-    fun updateUser(user: UserEntity){
-        viewModelScope.launch {
-            appRepository.updateUser(user)
-        }
+    private val _responseUser = MutableLiveData<UserEntity>()
+    val responseUser: LiveData<UserEntity> = _responseUser
+     fun getUser(id: Int){
+         viewModelScope.launch {
+             val response = appRepository.getUser(id)
+             _responseUser.value = response
+         }
     }
 }

@@ -31,8 +31,7 @@ class ScannerActivity : AppCompatActivity() {
     private var imageCapture: ImageCapture? = null
     private var cameraSelector: CameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
 
-    private var _currentImageURI = MutableLiveData<Uri>()
-    private var currentImageURI: LiveData<Uri> = _currentImageURI
+    private var currentImageURI: Uri? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityScannerBinding.inflate(layoutInflater)
@@ -122,8 +121,8 @@ class ScannerActivity : AppCompatActivity() {
             ContextCompat.getMainExecutor(this),
             object :ImageCapture.OnImageSavedCallback {
                 override fun onImageSaved(outputFileResults: ImageCapture.OutputFileResults) {
-                    _currentImageURI.value  = outputFileResults.savedUri
-                    if (_currentImageURI != null){
+                    currentImageURI  = outputFileResults.savedUri
+                    if (currentImageURI != null){
                         val intent = Intent(this@ScannerActivity, ScannerResultActivity::class.java)
                         intent.putExtra(EXTRA_CAMERA_IMAGE, currentImageURI.toString())
                         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
@@ -147,7 +146,7 @@ class ScannerActivity : AppCompatActivity() {
         ActivityResultContracts.PickVisualMedia()
     ){uri ->
         if (uri != null){
-            _currentImageURI.value = uri
+            currentImageURI = uri
             val intent = Intent(this@ScannerActivity, ScannerResultActivity::class.java)
             intent.putExtra(EXTRA_GALLERY_IMAGE, currentImageURI.toString())
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK

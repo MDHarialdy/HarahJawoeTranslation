@@ -7,6 +7,7 @@ import com.saintek.mdh.harahjawoetranslation.data.di.DataInjection
 import com.saintek.mdh.harahjawoetranslation.data.repository.AppRepository
 import com.saintek.mdh.harahjawoetranslation.ui.history.HistoryViewModel
 import com.saintek.mdh.harahjawoetranslation.ui.profile.ProfileViewModel
+import com.saintek.mdh.harahjawoetranslation.ui.profile_edit.FragmentEditViewModel
 import com.saintek.mdh.harahjawoetranslation.ui.scanner.ScannerViewModel
 import java.lang.IllegalArgumentException
 
@@ -25,6 +26,9 @@ class ViewModelFactory(private val repository: AppRepository): ViewModelProvider
             }
             modelClass.isAssignableFrom(MainViewModel::class.java) -> {
                 MainViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(FragmentEditViewModel::class.java) -> {
+                FragmentEditViewModel(repository) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel Class: "+ modelClass.name)
         }
