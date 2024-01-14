@@ -43,8 +43,10 @@ class HistoryFragment : Fragment() {
 
         historyViewModel.getUser(1)
         historyViewModel.responseUser.observe(viewLifecycleOwner){
-            binding.tvUsername.text = it.name
-            Log.d(TAG,"User : $it")
+            if (it != null){
+                binding.tvUsername.text = it.name
+                Log.d(TAG,"User : $it")
+            }
         }
     }
 

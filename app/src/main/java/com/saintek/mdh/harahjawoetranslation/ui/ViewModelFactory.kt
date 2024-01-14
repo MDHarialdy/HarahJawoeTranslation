@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.saintek.mdh.harahjawoetranslation.data.di.DataInjection
 import com.saintek.mdh.harahjawoetranslation.data.repository.AppRepository
 import com.saintek.mdh.harahjawoetranslation.ui.history.HistoryViewModel
+import com.saintek.mdh.harahjawoetranslation.ui.onboarding.OnBoardingViewModel
 import com.saintek.mdh.harahjawoetranslation.ui.profile.ProfileViewModel
 import com.saintek.mdh.harahjawoetranslation.ui.profile_edit.FragmentEditViewModel
 import com.saintek.mdh.harahjawoetranslation.ui.scanner.ScannerViewModel
@@ -29,6 +30,9 @@ class ViewModelFactory(private val repository: AppRepository): ViewModelProvider
             }
             modelClass.isAssignableFrom(FragmentEditViewModel::class.java) -> {
                 FragmentEditViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(OnBoardingViewModel::class.java) -> {
+                OnBoardingViewModel(repository) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel Class: "+ modelClass.name)
         }

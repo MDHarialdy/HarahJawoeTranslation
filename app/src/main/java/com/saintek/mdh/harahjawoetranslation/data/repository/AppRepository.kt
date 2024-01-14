@@ -24,13 +24,12 @@ class AppRepository private constructor(
 
     suspend fun getUser(id: Int) =  appDao.getUser(id)
 
-
-    suspend fun isFirstTime(): Boolean {
-      return appPref.isFirstTimeLaunch()
+    fun checkIsFirstTimeLaunch(): Boolean {
+        return appPref.isFirstTimeLaunch
     }
 
-    suspend fun isFirstTimeFalse(){
-        return appPref.isFirstTimeFalse()
+    fun setFirstTimeLaunchToFalse() {
+        appPref.isFirstTimeLaunch = false
     }
 
     companion object {

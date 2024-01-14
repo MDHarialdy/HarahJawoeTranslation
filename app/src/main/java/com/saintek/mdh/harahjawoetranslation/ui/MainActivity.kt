@@ -5,7 +5,6 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
@@ -15,8 +14,8 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.saintek.mdh.harahjawoetranslation.R
-import com.saintek.mdh.harahjawoetranslation.data.database.UserEntity
 import com.saintek.mdh.harahjawoetranslation.databinding.ActivityMainBinding
+import com.saintek.mdh.harahjawoetranslation.ui.onboarding.OnBoardingActivity
 import com.saintek.mdh.harahjawoetranslation.ui.scanner.ScannerActivity
 import com.saintek.mdh.harahjawoetranslation.ui.util.showToast
 
@@ -29,15 +28,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setUpViewModel()
-        val bottomNavView: BottomNavigationView = binding.bottomNavView
-        val navController = findNavController(R.id.nav_host_fragment_activity_home)
-        AppBarConfiguration.Builder(
-            R.id.navigation_history,
-            R.id.navigation_profile
-        ).build()
+        mainViewModel = ViewModelProvider(
+            this,
+            ViewModelFactory.getInstance(this)
+        )[MainViewModel::class.java]
 
-        bottomNavView.setupWithNavController(navController)
+        checkFirstTime()
 
         binding.cameraButton.setOnClickListener{
             if (allPermissionGranted()) {
@@ -65,21 +61,22 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-    private fun setUpViewModel(){
-        mainViewModel =
-            ViewModelProvider(this, ViewModelFactory.getInstance(this))[MainViewModel::class.java]
-        mainViewModel.checkFirstTimeLaunch()
-        mainViewModel.isFirstTimeLaunch.observe(this){ isFirstTime ->
-            if (!isFirstTime){
-                binding.root.visibility = View.VISIBLE
-                Log.d("MainActivity", "FistTime : $isFirstTime")
-                mainViewModel._isFirstTimeLaunch.removeObservers(this)
-            } else {
-                binding.root.visibility = View.GONE
-                Log.d("MainActivity", "FistTime : $isFirstTime")
-                val user = UserEntity(1, "MDH210705112", 1, "Banda Aceh")
-                mainViewModel.setUserFirstTime(user)
-            }
+    private fun checkFirstTime(){
+        if (!mainViewModel.checkIsFirstTimeLaunch()){
+            binding.container.visibility = View.VISIBLE
+
+            val bottomNavView: BottomNavigationView = binding.bottomNavView
+            val navController = findNavController(R.id.nav_host_fragment_activity_home)
+            AppBarConfiguration.Builder(
+                R.id.navigation_history,
+                R.id.navigation_profile
+            ).build()
+            bottomNavView.setupWithNavController(navController)
+        } else {
+            binding.root.visibility = View.GONE
+            val intent = Intent(this, OnBoardingActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 

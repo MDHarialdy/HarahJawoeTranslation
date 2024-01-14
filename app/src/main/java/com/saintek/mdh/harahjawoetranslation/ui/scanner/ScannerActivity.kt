@@ -18,8 +18,6 @@ import androidx.camera.core.ImageCaptureException
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import com.saintek.mdh.harahjawoetranslation.R
 import com.saintek.mdh.harahjawoetranslation.databinding.ActivityScannerBinding
 import com.saintek.mdh.harahjawoetranslation.ui.util.createCustomTempFile

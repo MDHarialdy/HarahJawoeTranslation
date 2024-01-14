@@ -30,8 +30,8 @@ class ScannerResultActivity : AppCompatActivity() {
         val viewModelFactory = ViewModelFactory.getInstance(this)
         scannerViewModel = ViewModelProvider(this, viewModelFactory)[ScannerViewModel::class.java]
 
-        var imageUrlCamera = intent.getStringExtra(ScannerActivity.EXTRA_CAMERA_IMAGE)?.toUri()
-        var imageUrlGallery = intent.getStringExtra(ScannerActivity.EXTRA_GALLERY_IMAGE)?.toUri()
+        val imageUrlCamera = intent.getStringExtra(ScannerActivity.EXTRA_CAMERA_IMAGE)?.toUri()
+        val imageUrlGallery = intent.getStringExtra(ScannerActivity.EXTRA_GALLERY_IMAGE)?.toUri()
         val scanResult = intent.getStringExtra(ScannerActivity.EXTRA_RESULT_SCANNER) ?: "Apapun"
 
         if (imageUrlCamera != null) {

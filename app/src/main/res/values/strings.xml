@@ -19,4 +19,11 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="fail_to_take_picture">Gagal Mengambil Gambar</string>
+    <string name="desc_menu_1">ini deskripsi menu satu</string>
+    <string name="learn_now">Mulai</string>
+    <string name="title_menu_1">title menu 1</string>
+    <string name="title_menu_2">title menu 2</string>
+    <string name="desc_menu_2">deskripsi menu 2</string>
+    <string name="desc_menu_3">deskripsi menu 3</string>
+    <string name="title_menu_3">ttitle menu ke 3\n</string>
 </resources>
