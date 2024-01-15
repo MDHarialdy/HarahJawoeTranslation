@@ -1,3 +1,4 @@
+# Harah Jawoe Translation
 Indonesia, as a diverse country with 17,508 islands, 583 languages, and 1,128 ethnic groups, faces challenges in preserving its rich cultural heritage. One significant cultural element is Pegon script, a writing system for the Javanese language using Arabic letters. It emerged in the 15th century when Islam spread in Java, initially used for writing Islamic texts in Javanese, such as the Qur'an and hadith, contributing to the spread of Islam in the region.
 
 Over centuries, Pegon script expanded from religious texts to various literary and documentary fields. Despite its historical significance, only a small percentage of the population can read Pegon script fluently. To address this issue, we have initiated the Harah Jawoe Translation project.
