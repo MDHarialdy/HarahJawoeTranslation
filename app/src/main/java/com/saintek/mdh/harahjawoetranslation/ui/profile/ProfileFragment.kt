@@ -35,7 +35,7 @@ class ProfileFragment : Fragment() {
         profileViewModel.getUser(1)
         profileViewModel.responseUser.observe(viewLifecycleOwner){
             binding.tvFullname.text = "Nama: ${it.name}"
-            binding.tvAge.text = "Umur: ${it.age}"
+            binding.tvAge.text = "Umur: ${it.age} tahun"
             binding.tvCity.text = "Kota: ${it.city}"
         }
         binding.btnEdit.setOnClickListener {

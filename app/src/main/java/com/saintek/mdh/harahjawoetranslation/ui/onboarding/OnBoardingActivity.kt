@@ -23,7 +23,7 @@ class OnBoardingActivity : AppCompatActivity() {
             ViewModelFactory.getInstance(this))[OnBoardingViewModel::class.java]
 
         binding.buttonMulai.setOnClickListener {
-            val user = UserEntity(1, "MDH210705112", 1, "Banda Aceh")
+            val user = UserEntity(1, "MDH210705112", "0", "Banda Aceh")
             onBoardingViewModel.insertUserFirstTime(user)
             onBoardingViewModel.setFirstTimeLaunchToFalse()
             val intent = Intent(this, MainActivity::class.java)

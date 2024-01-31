@@ -45,7 +45,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:layout_editor_absoluteX="10dp">
 
-                <EditText
+                <com.saintek.mdh.harahjawoetranslation.ui.util.CustomNameEditText
                     android:id="@+id/et_fullname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -68,13 +68,12 @@
                 app:layout_constraintTop_toBottomOf="@id/cv_fullname"
                 tools:layout_editor_absoluteX="10dp">
 
-                <EditText
+                <com.saintek.mdh.harahjawoetranslation.ui.util.CustomAgeEditText
                     android:id="@+id/et_age"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:fontFamily="@font/alata"
-                    android:inputType="numberDecimal"
                     android:hint="Umur (cth : 9 )"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -91,7 +90,7 @@
                 app:layout_constraintTop_toBottomOf="@id/cv_age"
                 tools:layout_editor_absoluteX="10dp">
 
-                <EditText
+                <com.saintek.mdh.harahjawoetranslation.ui.util.CustomCityEditText
                     android:id="@+id/et_city"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -107,12 +106,9 @@
                 android:id="@+id/btn_save"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/yellow"
-                app:icon="@drawable/baseline_save_24"
-                app:iconTint="@color/black"
                 android:text="Save"
-                android:textColor="@color/black"
                 android:layout_marginBottom="40dp"
+                android:backgroundTint="@color/yellow"
                 android:layout_marginTop="40dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -17,7 +17,9 @@ class HistoryAdapter(private val historyEntity: List<HistoryEntity>): RecyclerVi
                 binding.apply {
                     ivPhotoHistory.setImageBitmap(bitmap)
                 }
+                binding.progressBar.progress = item.accuration
                 binding.tvProfileText.text = item.result
+                binding.tvPercentage.text = "${item.accuration}%"
             }
     }
 

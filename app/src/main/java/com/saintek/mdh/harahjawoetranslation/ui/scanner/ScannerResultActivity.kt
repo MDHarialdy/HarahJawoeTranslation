@@ -32,7 +32,10 @@ class ScannerResultActivity : AppCompatActivity() {
 
         val imageUrlCamera = intent.getStringExtra(ScannerActivity.EXTRA_CAMERA_IMAGE)?.toUri()
         val imageUrlGallery = intent.getStringExtra(ScannerActivity.EXTRA_GALLERY_IMAGE)?.toUri()
-        val scanResult = intent.getStringExtra(ScannerActivity.EXTRA_RESULT_SCANNER) ?: "Apapun"
+        val scanResult = intent.getStringExtra(ScannerActivity.EXTRA_RESULT_SCANNER) ?: "ini adalah hasil translate"
+
+        binding.tvPercentage.text = "Accuration: 20%"
+        binding.progressBar.progress = 20
 
         if (imageUrlCamera != null) {
             val bitmap = BitmapFactory.decodeFile(imageUrlCamera.path)
@@ -67,6 +70,7 @@ class ScannerResultActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+        finish()
     }
 
     override fun onSupportNavigateUp(): Boolean {

@@ -18,7 +18,7 @@ class AppRepository private constructor(
         appDao.insertInitUser(user)
     }
 
-    suspend fun updateUser(name: String, age: Int, city: String, id: Int){
+    suspend fun updateUser(name: String, age: String, city: String, id: Int){
         appDao.updateUser(name, age, city, id)
     }
 

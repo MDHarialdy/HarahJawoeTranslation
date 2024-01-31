@@ -22,6 +22,7 @@ class ScannerViewModel(val appRepository: AppRepository) : ViewModel(){
                         imageByteArray = byteArray,
                         historyId = 1,
                         result = resultScan,
+                        accuration = 20,
                         id = 0
                     )
                 }

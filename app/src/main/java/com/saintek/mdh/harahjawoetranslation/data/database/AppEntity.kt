@@ -8,7 +8,7 @@ data class UserEntity(
     @PrimaryKey
     val id: Int,
     val name: String,
-    val age: Int,
+    val age: String,
     val city: String
 )
 
@@ -18,7 +18,8 @@ data class HistoryEntity (
     val id: Int,
     val historyId: Int,
     val imageByteArray: ByteArray,
-    val result: String
+    val result: String,
+    val accuration: Int
 ) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true

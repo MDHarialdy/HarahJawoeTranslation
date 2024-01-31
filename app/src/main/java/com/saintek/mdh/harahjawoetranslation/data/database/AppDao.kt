@@ -22,5 +22,5 @@ interface AppDao {
     suspend fun getUser(id: Int): UserEntity
 
     @Query("UPDATE userentity SET name = :name, age = :age, city = :city WHERE id = :id")
-    suspend fun updateUser(name: String, age: Int, city: String, id: Int)
+    suspend fun updateUser(name: String, age: String, city: String, id: Int)
 }

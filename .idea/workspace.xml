@@ -9,33 +9,27 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd5d0ea5-e1a9-47a1-92a0-9828b6d8bf23" name="Changes" comment="update profile, edit fragment, and viewmodel">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/onboarding/OnBoardingActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/onboarding/OnBoardingViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_circle_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_circle_full_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_dicoding.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/image_alumni_terpercaya.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/image_belajar_fleksibel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/image_code_review.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/image_dicoding.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/image_kurikulum_global.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_on_boarding.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/activity_on_boarding_scene.xml" afterDir="false" />
+    <list default="true" id="dd5d0ea5-e1a9-47a1-92a0-9828b6d8bf23" name="Changes" comment="add onboarding activity and fix some bug">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/util/CustomAgeEditText.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/util/CustomCityEditText.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/util/CustomNameEditText.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/button_bg_disabled.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/button_bg_enabled.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/custom_progress.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/data/database/preferences/AppPref.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/data/database/preferences/AppPref.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/data/di/DataInjection.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/data/di/DataInjection.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/data/database/AppDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/data/database/AppDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/data/database/AppEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/data/database/AppEntity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/data/repository/AppRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/data/repository/AppRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/MainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/MainViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/ViewModelFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/ViewModelFactory.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/history/HistoryFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/history/HistoryFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/scanner/ScannerActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/scanner/ScannerActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/HistoryAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/HistoryAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/onboarding/OnBoardingActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/onboarding/OnBoardingActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/profile/ProfileFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/profile/ProfileFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/profile_edit/FragmentEditViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/profile_edit/FragmentEditViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/profile_edit/ProfileEditFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/profile_edit/ProfileEditFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/scanner/ScannerResultActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/scanner/ScannerResultActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/baseline_photo_camera_24.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/baseline_photo_camera_24.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/scanner/ScannerViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/scanner/ScannerViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_scanner_result.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_scanner_result.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile_edit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile_edit.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_history.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_history.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,9 +48,10 @@
       <list>
         <option value="valueResourceFile" />
         <option value="navigationResourceFile" />
-        <option value="resourceFile" />
         <option value="layoutResourceFile" />
+        <option value="Class" />
         <option value="Kotlin Class" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -76,23 +71,28 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;AnalyzeApkAction.lastApkPath&quot;: &quot;C:/Users/ACER/AndroidStudioProjects/HarahJawoeTranslation&quot;,
-    &quot;ResourceManagerPrefKey.ResourceType&quot;: &quot;DRAWABLE&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ScreenRecorder.SavePath&quot;: &quot;D:\\0.Developments&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/0.Developments&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "AnalyzeApkAction.lastApkPath": "C:/Users/ACER/AndroidStudioProjects/HarahJawoeTranslation",
+    "PROJECT_TRUSTED_KEY": "true",
+    "ResourceManagerPrefKey.ResourceType": "DRAWABLE",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ScreenRecorder.SavePath": "D:\\0.Developments",
+    "android-custom-viewC:/Users/ACER/AndroidStudioProjects/HarahJawoeTranslation/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/util/CustomAgeEditText.kt_SELECTED": "CustomAgeEditText",
+    "android-custom-viewC:/Users/ACER/AndroidStudioProjects/HarahJawoeTranslation/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/util/CustomButtonSave.kt_SELECTED": "CustomButtonSave",
+    "android-custom-viewC:/Users/ACER/AndroidStudioProjects/HarahJawoeTranslation/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/util/CustomCityEditText.kt_SELECTED": "CustomCityEditText",
+    "android-custom-viewC:/Users/ACER/AndroidStudioProjects/HarahJawoeTranslation/app/src/main/java/com/saintek/mdh/harahjawoetranslation/ui/util/CustomNameEditText.kt_SELECTED": "CustomNameEditText",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "last_opened_file_path": "C:/Users/ACER/AndroidStudioProjects/HarahJawoeTranslation",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ACER\AndroidStudioProjects\HarahJawoeTranslation\app\src\main\res\drawable" />
@@ -119,6 +119,9 @@
       <recent name="com.saintek.mdh.harahjawoetranslation.ui.profile" />
       <recent name="com.saintek.mdh.harahjawoetranslation.ui.history" />
       <recent name="com.saintek.mdh.harahjawoetranslation.ui" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.saintek.mdh.harahjawoetranslation.ui.util" />
     </key>
   </component>
   <component name="RunManager">
@@ -246,13 +249,21 @@
       <option name="project" value="LOCAL" />
       <updated>1705170377865</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add onboarding activity and fix some bug">
+      <created>1705251458422</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1705251458422</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="update" />
     <MESSAGE value="update profile, edit fragment, and viewmodel" />
-    <option name="LAST_COMMIT_MESSAGE" value="update profile, edit fragment, and viewmodel" />
+    <MESSAGE value="add onboarding activity and fix some bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="add onboarding activity and fix some bug" />
   </component>
 </project>
